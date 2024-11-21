@@ -6,6 +6,8 @@ const screen = {
                                                 <div class="data">
                                                     <h1>${user.name ?? 'Não possui nome cadastrado 😒'}</h1>
                                                     <p>${user.bio ?? 'Não possui Bio 😒'}</p>
+                                                    <p>Seguidores: 👤${user.seguidores ?? '0 Seguidores'}</p>   
+                                                    <p>Seguindo: 👥 ${user.seguindo ?? 'Ainda não segue ninguem 😒'}
                                                 </div>
                                         </div`
 
@@ -19,6 +21,9 @@ const screen = {
                                                     <ul>${repositoriesItens}</ul>
                                                 </div>`
             }
+
+            let eventosPush = ''
+            
     },
 
     renderNotFound(){

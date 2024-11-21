@@ -1,5 +1,5 @@
 import { getUser } from "./services/user.js"
-import { getRepositories } from "./services/repositories.js"
+import { getEvents, getRepositories } from "./services/repositories.js"
 
 import { user } from "./objects/user.js"
 import { screen } from "./objects/screen.js"
@@ -32,16 +32,20 @@ function verificandoInputVazio(userName){
 
 async function getUserData(userName) {
 
-    
     const userResponse = await getUser(userName)
     const repositoriesResponse = await getRepositories(userName)
+    const eventsResponse = await getEvents(userName)
     
     if(userResponse.message === 'Not Found'){
         screen.renderNotFound()
         return
     }
+
     user.setInfo(userResponse)
-    user.setRepositories(repositoriesResponse)   
+    user.setRepositories(repositoriesResponse)  
+    user.setEvents(eventsResponse)
+
+    console.log(eventsResponse)
     
     screen.renderUser(user)
 }
