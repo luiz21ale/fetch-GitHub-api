@@ -12,7 +12,13 @@ const screen = {
                                         </div`
 
         let repositoriesItens = ''
-        user.repositories.forEach(repo => repositoriesItens += `<li><a href="${repo.html_url}" target="_blank">${repo.name} <br>🍴${repo.forks}  ⭐${repo.stargazers_count}</a></li>`)
+        user.repositories.forEach(repo => repositoriesItens += `<li><a href="${repo.html_url}" target="_blank">${repo.name}
+            <br>
+            <br>
+            <span class="atividade">🍴${repo.forks}</span>  <span class="atividade">⭐${repo.stargazers_count} </span>  <span class="atividade"> 👀${repo.watchers
+            }</span> 
+
+            </a></li>`)
 
         if (user.repositories.length > 0) {
             this.userProfile.innerHTML += `
@@ -27,13 +33,13 @@ const screen = {
 
         user.eventos.forEach(events => {
             eventosPush += (events.payload.commits && events.payload.commits.length > 0)
-                ? `<li><span>${events.repo.name} </span> - ${events.payload.commits[0].message}</li>`
-                : `<li><span>${events.repo.name} </span> - Sem mensagem de commit</li>`;
+                ? `<li><span>${events.repo.name} </span> - ${events.payload.commits[0].message}</li> <br>`
+                : `<li><span>${events.repo.name} </span> - Sem mensagem de commit</li> <br>`;
         });
 
         this.userProfile.innerHTML += `<div class="repositories section">
                                             <h2>Eventos</h2>
-                                            <ul>${eventosPush}</ul>
+                                            <ul class="eventos">${eventosPush}</ul>
                                         </div>`;
     },
 

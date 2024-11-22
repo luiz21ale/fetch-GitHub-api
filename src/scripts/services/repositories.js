@@ -1,33 +1,12 @@
-import { baseUrl, repositoriesQuantity, eventos, token } from "../variables.js"
+import { baseUrl, repositoriesQuantity, eventos } from "../variables.js"
 
 async function getRepositories(userName) {
-    const response = await fetch(`${baseUrl}/${userName}/repos?per_page=${repositoriesQuantity}`,{
-        method: 'GET',
-        headers: {
-            'Authorization': `Bearer ${token}`,
-        }
-    })
-    
-    if (!response.ok) {
-        throw new Error(`Erro ao obter repositórios: ${response.statusText}`);
-    }
-
+    const response = await fetch(`${baseUrl}/${userName}/repos?per_page=${repositoriesQuantity}`)
     return await response.json()
 }
 
 async function getEvents(userName){
-    const response = await fetch(`${baseUrl}/${userName}/events?per_page=${eventos}`,{
-        method: 'GET',
-        headers: {
-            'Authorization': `Bearer ${token}`,
-        }
-    })
-
-
-    if (!response.ok) {
-        throw new Error(`Erro ao obter repositórios: ${response.statusText}`);
-    }
-
+    const response = await fetch(`${baseUrl}/${userName}/events?per_page=${eventos}`)
     return await response.json()
 }
 

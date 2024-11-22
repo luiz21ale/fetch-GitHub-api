@@ -1,6 +1,5 @@
 const baseUrl = 'https://api.github.com/users'
 const repositoriesQuantity = 7
-const eventos = 3
-const token = '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'
+const eventos = 10
 
-export {baseUrl, repositoriesQuantity, eventos, token}
+export {baseUrl, repositoriesQuantity, eventos}

@@ -138,6 +138,16 @@ span{
   justify-content: center;
 }
 
+.container .profile-data .repositories .eventos{
+  gap: 10px;
+}
+
+.atividade{
+  background-color: blueviolet;
+  padding: 2px;
+  margin-right: 5px;
+}
+
 .container .profile-data .repositories ul li a{
   padding: 20px;
   border: 1px solid grey;  
