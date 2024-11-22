@@ -16,7 +16,9 @@ const screen = {
             <br>
             <br>
             <span class="atividade">🍴${repo.forks}</span>  <span class="atividade">⭐${repo.stargazers_count} </span>  <span class="atividade"> 👀${repo.watchers
-            }</span> 
+            }</span>  <span class="atividade">  👨‍💻${repo.language}</span>
+
+
 
             </a></li>`)
 
